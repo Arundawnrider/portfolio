@@ -5,21 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Portfolio</title>
+  <title>Arun V — Aeronautical Engineer</title>
 
-  <!--
-    - favicon
-  -->
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
   <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -27,71 +16,70 @@
 
 <body>
 
-  <!--
-    - #MAIN
-  -->
-
   <main>
 
-    <!--
-      - #SIDEBAR
-    -->
-
+    <!-- ─── SIDEBAR ─── -->
     <aside class="sidebar" data-sidebar>
 
       <div class="sidebar-info">
-
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80">
+          <img src="./assets/images/my-avatar.png" alt="Arun V" width="80">
         </figure>
 
         <div class="info-content">
           <h1 class="name" title="Arun V">Arun V</h1>
-
-          <p class="title">Aeronautical Engineering Student </p>
+          <p class="title">Aeronautical Engineer &amp; UAV Researcher</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
           <span>Show Contacts</span>
-
           <ion-icon name="chevron-down"></ion-icon>
         </button>
-
       </div>
 
       <div class="sidebar-info_more">
-
         <div class="separator"></div>
 
         <ul class="contacts-list">
 
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="mail-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Email</p>
-
-              <a href="arundawn96058@gmail.com" class="contact-link">arundawn96058@gmail.com</a>
+              <a href="mailto:arundawn96058@gmail.com" class="contact-link">arundawn96058@gmail.com</a>
             </div>
-
           </li>
 
-
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="location-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Location</p>
-
-              <address>Chennai,Tamilnadu ,India</address>
+              <address>Chennai, Tamil Nadu, India</address>
             </div>
+          </li>
 
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="school-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Institution</p>
+              <span class="contact-link">MIT — Aeronautical Engineering '26</span>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="business-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Organisation</p>
+              <span class="contact-link">ARIES — Co-founder</span>
+            </div>
           </li>
 
         </ul>
@@ -99,82 +87,46 @@
         <div class="separator"></div>
 
         <ul class="social-list">
-
           <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
+            <a href="https://github.com/Arundawnrider" class="social-link" target="_blank">
+              <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
-
           <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
+            <a href="https://www.linkedin.com/in/arun-v-aeronautical/" class="social-link" target="_blank">
+              <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
-
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
         </ul>
 
       </div>
-
     </aside>
 
 
-
-
-
-    <!--
-      - #main-content
-    -->
-
+    <!-- ─── MAIN CONTENT ─── -->
     <div class="main-content">
 
-      <!--
-        - #NAVBAR
-      -->
-
+      <!-- NAVBAR -->
       <nav class="navbar">
-
         <ul class="navbar-list">
-
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link active" data-nav-link>About</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Portfolio</button>
           </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Project</button>
-          </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
           </li>
-
         </ul>
-
       </nav>
 
 
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
+      <!-- ─── ABOUT ─── -->
+      <article class="about active" data-page="about">
 
         <header>
           <h2 class="h2 article-title">About me</h2>
@@ -182,359 +134,357 @@
 
         <section class="about-text">
           <p>
-           <p>
-  I'm an Aerospace Engineer and Avionics Enthusiast from Chennai, India, passionate about building intelligent systems that fly, float, or drive with precision. I specialize in embedded systems, control design, and navigation technologies.
-</p>
-<p>
-  My goal is to design systems that are not only technically robust but also intuitive and efficient. Whether it's a UAV, a marine navigation prototype, or an avionics module, I ensure that every project reflects innovation, reliability, and clarity. I believe in combining engineering precision with creative problem-solving to push the boundaries of what’s possible in aerospace and embedded technologies.
-</p>
-
+            I'm a final-year Aeronautical Engineering student at MIT, Chennai, and co-founder of
+            <strong>ARIES (Aerobot Research and Innovative Engineering Solutions)</strong>. My work
+            sits at the intersection of aerospace engineering, embedded systems, and autonomous flight —
+            from CFD simulations of novel UAV configurations to Raspberry Pi-powered drone payloads.
+          </p>
+          <p>
+            My flagship project, <strong>TWiQ</strong>, is a tandem-wing hybrid VTOL quadrotor UAV
+            designed for efficient cruise and vertical agility — shaped through ANSYS Fluent CFD, AVL
+            stability analysis, and SolidWorks structural modelling. Alongside engineering design, I
+            build the software that makes drones smarter: real-time geotagged camera systems,
+            Android companion apps, and full-stack flight data tools.
           </p>
         </section>
 
-
-        <!--
-          - service
-        -->
-
+        <!-- WHAT I'M DOING -->
         <section class="service">
-
           <h3 class="h3 service-title">What I'm Doing</h3>
 
-<ul class="service-list">
+          <ul class="service-list">
 
-  <li class="service-item">
-    <div class="service-icon-box">
-      <img src="./assets/images/icon-design.svg" alt="avionics icon" width="40">
-    </div>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg" alt="UAV Design" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">UAV Design &amp; CFD</h4>
+                <p class="service-item-text">
+                  Full-cycle UAV design — wing geometry, boattail fuselage optimisation, SST k-ω CFD
+                  in ANSYS Fluent, and AVL longitudinal stability analysis.
+                </p>
+              </div>
+            </li>
 
-    <div class="service-content-box">
-      <h4 class="h4 service-item-title">Avionics & Control Systems</h4>
-      <p class="service-item-text">
-        Designing and developing control systems for aircraft, drones, and space systems with precise navigation and stability.
-      </p>
-    </div>
-  </li>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Embedded Systems" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Embedded &amp; Avionics Systems</h4>
+                <p class="service-item-text">
+                  Raspberry Pi payloads, Pixhawk avionics stacks, GPS/UART integration, and
+                  real-time sensor fusion for autonomous flight.
+                </p>
+              </div>
+            </li>
 
-  <li class="service-item">
-    <div class="service-icon-box">
-      <img src="./assets/images/icon-dev.svg" alt="embedded systems icon" width="40">
-    </div>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="Software" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Drone Software &amp; Apps</h4>
+                <p class="service-item-text">
+                  Flask backends, React Native Android apps, GitHub-integrated OTA update systems,
+                  and geotagged imaging pipelines for UAV payloads.
+                </p>
+              </div>
+            </li>
 
-    <div class="service-content-box">
-      <h4 class="h4 service-item-title">Embedded Systems</h4>
-      <p class="service-item-text">
-        Building custom embedded solutions for aerospace and robotics applications using microcontrollers and real-time operating systems.
-      </p>
-    </div>
-  </li>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-photo.svg" alt="Research" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Aerospace Research</h4>
+                <p class="service-item-text">
+                  IEEE-format research on hybrid VTOL aerodynamics, digital twin structural analysis,
+                  and drone startup ecosystem development in South India.
+                </p>
+              </div>
+            </li>
 
-  <li class="service-item">
-    <div class="service-icon-box">
-      <img src="./assets/images/icon-app.svg" alt="UAV systems icon" width="40">
-    </div>
+          </ul>
+        </section>
 
-    <div class="service-content-box">
-      <h4 class="h4 service-item-title">Unmanned Vehicle Prototyping</h4>
-      <p class="service-item-text">
-        Creating and testing prototypes for drones, RC boats, and mini rockets, focusing on mission-specific performance and design.
-      </p>
-    </div>
-  </li>
+        <!-- TESTIMONIALS -->
+        <section class="testimonials">
+          <h3 class="h3 testimonials-title">Testimonials</h3>
 
-  <li class="service-item">
-    <div class="service-icon-box">
-      <img src="./assets/images/icon-photo.svg" alt="data icon" width="40">
-    </div>
+          <ul class="testimonials-list has-scrollbar">
 
-    <div class="service-content-box">
-      <h4 class="h4 service-item-title">Data & Signal Processing</h4>
-      <p class="service-item-text">
-        Working with SDR and sensor data for flight tracking, navigation, and anomaly detection using real-world datasets.
-      </p>
-    </div>
-  </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-1.png" alt="Dr. Kaviyarasu" width="60" data-testimonials-avatar>
+                </figure>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Dr. Kaviyarasu</h4>
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Arun consistently demonstrated deep curiosity and hands-on skill in avionics and
+                    control systems. His ability to prototype embedded systems and translate theory
+                    into real-time applications is truly commendable.
+                  </p>
+                </div>
+              </div>
+            </li>
 
-</ul>
- </section>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-2.png" alt="Jabez Richards" width="60" data-testimonials-avatar>
+                </figure>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jabez Richards</h4>
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    I was impressed with Arun's project on SDR-based aircraft signal reception. His
+                    structured approach, dedication to problem-solving, and technical clarity made
+                    him stand out among his peers.
+                  </p>
+                </div>
+              </div>
+            </li>
 
+          </ul>
+        </section>
 
-       <h3 class="h3 testimonials-title">Testimonials</h3>
+        <!-- MODAL for testimonials -->
+        <div class="modal-container" data-modal-container>
+          <div class="overlay" data-overlay></div>
+          <section class="testimonials-modal">
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+            <div class="modal-content">
+              <h4 class="h4 modal-title" data-modal-title>Daniel lewis</h4>
+              <time datetime="2021-06-14">14 June, 2021</time>
+              <div data-modal-text>
+                <p>Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience and is very concerned about the needs of client.</p>
+              </div>
+            </div>
+          </section>
+        </div>
 
-<ul class="testimonials-list has-scrollbar">
+        <!-- COLLABORATIONS -->
+        <section class="clients">
+          <h3 class="h3 clients-title">Collaborations &amp; Affiliations</h3>
+          <ul class="clients-list has-scrollbar">
 
-  <li class="testimonials-item">
-    <div class="content-card" data-testimonials-item>
+            <li class="clients-item">
+              <a href="https://www.annauniv.edu/" target="_blank">
+                <img src="./assets/images/ANNAUNIVERSITYLOGO.png" alt="Anna University">
+              </a>
+            </li>
 
-      <figure class="testimonials-avatar-box">
-        <img src="./assets/images/avatar-1.png" alt="Dr. Kaviyarasu" width="60" data-testimonials-avatar>
-      </figure>
+            <li class="clients-item">
+              <a href="https://www.drdo.gov.in/labs-and-establishments/defence-research-and-development-laboratory-drdl" target="_blank">
+                <img src="./assets/images/AAE SEAL 2.png" alt="DRDL — DRDO">
+              </a>
+            </li>
 
-      <h4 class="h4 testimonials-item-title" data-testimonials-title>Dr. Kaviyarasu</h4>
+            <li class="clients-item">
+              <a href="https://www.brahmos.com/" target="_blank">
+                <img src="./assets/images/BRAHMOS LOGO.png" alt="BrahMos Aerospace">
+              </a>
+            </li>
 
-      <div class="testimonials-text" data-testimonials-text>
-        <p>
-          Arun consistently demonstrated deep curiosity and hands-on skill in avionics and control systems. His ability to prototype embedded systems and translate theory into real-time applications is truly commendable.
-        </p>
-      </div>
+            <li class="clients-item">
+              <a href="https://naanmudhalvan.tn.gov.in/" target="_blank">
+                <img src="./assets/images/NAAN MUDHALVAN LOGO.png" alt="Naan Mudhalvan">
+              </a>
+            </li>
 
-    </div>
-  </li>
+          </ul>
+        </section>
 
-  <li class="testimonials-item">
-    <div class="content-card" data-testimonials-item>
-
-      <figure class="testimonials-avatar-box">
-        <img src="./assets/images/avatar-2.png" alt="Jabez Richards" width="60" data-testimonials-avatar>
-      </figure>
-
-      <h4 class="h4 testimonials-item-title" data-testimonials-title>Jabez Richards</h4>
-
-      <div class="testimonials-text" data-testimonials-text>
-        <p>
-          I was impressed with Arun’s project on SDR-based aircraft signal reception. His structured approach, dedication to problem-solving, and technical clarity made him stand out among his peers.
-        </p>
-      </div>
-
-    </div>
-  </li>
-</ul>
-
-
-      <section class="clients">
-
-  <h3 class="h3 clients-title">Collaborations</h3>
-
-  <ul class="clients-list has-scrollbar">
-
-    <li class="clients-item">
-      <a href="https://www.annauniv.edu/" target="_blank">
-        <img src="./assets/images/ANNAUNIVERSITYLOGO.png" alt="Anna University">
-      </a>
-    </li>
-
-    <li class="clients-item">
-      <a href="https://www.brahmos.com/" target="_blank">
-        <img src="./assets/images/BRAHMOS LOGO.png" alt="BrahMos Aerospace">
-      </a>
-    </li>
-
-    <li class="clients-item">
-      <a href="https://www.drdo.gov.in/labs-and-establishments/defence-research-and-development-laboratory-drdl" target="_blank">
-        <img src="./assets/images/AAE SEAL 2.png" alt="DRDL - DRDO">
-      </a>
-    </li>
-
-    <li class="clients-item">
-      <a href="https://naanmudhalvan.tn.gov.in/" target="_blank">
-        <img src="./assets/images/NAAN MUDHALVAN LOGO.png" alt="Naan Mudhalvan Initiative">
-      </a>
-    </li>
-
-  </ul>
-
-</section>
+      </article>
 
 
-
-
-      <!--
-        - #RESUME
-      -->
-
+      <!-- ─── RESUME ─── -->
       <article class="resume" data-page="resume">
 
         <header>
           <h2 class="h2 article-title">Resume</h2>
         </header>
 
+        <!-- EDUCATION -->
         <section class="timeline">
-
           <div class="title-wrapper">
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
             </div>
-
             <h3 class="h3">Education</h3>
           </div>
 
           <ol class="timeline-list">
 
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">University school of the arts</h4>
-
-              <span>2007 — 2008</span>
-
+              <h4 class="h4 timeline-item-title">B.E. Aeronautical Engineering — MIT, Chennai</h4>
+              <span>2022 — 2026</span>
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Final-year student specialising in aerodynamics, flight mechanics, avionics, and structural
+                analysis. Core project: TWiQ hybrid VTOL UAV — an IEEE-format research effort spanning
+                CFD, stability analysis, and structural simulation.
               </p>
-
             </li>
 
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">New york academy of art</h4>
-
-              <span>2006 — 2007</span>
-
+              <h4 class="h4 timeline-item-title">Higher Secondary (PCM + CS) — Tamil Nadu State Board</h4>
+              <span>2020 — 2022</span>
               <p class="timeline-text">
-                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-                omnis..
+                Physics, Chemistry, Mathematics with Computer Science. Strong foundation in applied
+                mathematics and programming that drives current embedded systems work.
               </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">High school of art and design</h4>
-
-              <span>2002 — 2004</span>
-
-              <p class="timeline-text">
-                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                magni dolores
-                eos.
-              </p>
-
             </li>
 
           </ol>
-
         </section>
 
+        <!-- EXPERIENCE -->
         <section class="timeline">
-
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <ion-icon name="briefcase-outline"></ion-icon>
             </div>
-
             <h3 class="h3">Experience</h3>
           </div>
 
           <ol class="timeline-list">
 
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Creative director</h4>
-
-              <span>2015 — Present</span>
-
+              <h4 class="h4 timeline-item-title">Co-founder &amp; Lead Engineer — ARIES</h4>
+              <span>2023 — Present</span>
               <p class="timeline-text">
-                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-                molestias
-                exceptur.
+                Co-founded Aerobot Research and Innovative Engineering Solutions. Leading UAV design,
+                avionics R&amp;D, drone payload development (ARIESCAM), curriculum creation for drone
+                engineering courses, and event coordination for the organisation.
               </p>
-
             </li>
 
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Art director</h4>
-
-              <span>2013 — 2015</span>
-
+              <h4 class="h4 timeline-item-title">Engineering Intern — DRDL, Hyderabad (DRDO)</h4>
+              <span>2024</span>
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Interned at the Defence Research and Development Laboratory under DRDO. Gained hands-on
+                exposure to defence aerospace systems, propulsion test infrastructure, and high-performance
+                materials in a research-grade environment.
               </p>
-
             </li>
 
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Web designer</h4>
-
-              <span>2010 — 2013</span>
-
+              <h4 class="h4 timeline-item-title">Design Intern (Applied) — ARIES</h4>
+              <span>2023 — 2024</span>
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Led SolidWorks CAD modelling, ANSYS structural simulation, and aerodynamic trade studies
+                for the TWiQ UAV. Developed course content, SDS documentation, and technical reports.
               </p>
-
             </li>
 
           </ol>
-
         </section>
 
+        <!-- SKILLS -->
         <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
+          <h3 class="h3 skills-title">My Skills</h3>
 
           <ul class="skills-list content-card">
 
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5">Web design</h5>
+                <h5 class="h5">ANSYS Fluent (CFD)</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">SolidWorks (CAD &amp; FEA)</h5>
+                <data value="88">88%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 88%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Python (Scripting &amp; Automation)</h5>
                 <data value="80">80%</data>
               </div>
-
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 80%;"></div>
               </div>
-
             </li>
 
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5">Graphic design</h5>
+                <h5 class="h5">Raspberry Pi &amp; Embedded Linux</h5>
+                <data value="78">78%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 78%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">AVL (Aerodynamic Vortex Lattice)</h5>
+                <data value="75">75%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 75%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Flask &amp; REST APIs</h5>
+                <data value="72">72%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 72%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Pixhawk / ArduPilot Avionics</h5>
                 <data value="70">70%</data>
               </div>
-
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 70%;"></div>
               </div>
-
             </li>
 
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5">Branding</h5>
-                <data value="90">90%</data>
+                <h5 class="h5">Android (React Native / Kotlin)</h5>
+                <data value="65">65%</data>
               </div>
-
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
+                <div class="skill-progress-fill" style="width: 65%;"></div>
               </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">WordPress</h5>
-                <data value="50">50%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
             </li>
 
           </ul>
-
         </section>
 
       </article>
 
 
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
+      <!-- ─── PORTFOLIO ─── -->
       <article class="portfolio" data-page="portfolio">
 
         <header>
@@ -544,429 +494,128 @@
         <section class="projects">
 
           <ul class="filter-list">
-
             <li class="filter-item">
               <button class="active" data-filter-btn>All</button>
             </li>
-
             <li class="filter-item">
-              <button data-filter-btn>Web design</button>
+              <button data-filter-btn>UAV Design</button>
             </li>
-
             <li class="filter-item">
-              <button data-filter-btn>Applications</button>
+              <button data-filter-btn>Embedded Systems</button>
             </li>
-
             <li class="filter-item">
-              <button data-filter-btn>Web development</button>
+              <button data-filter-btn>Software</button>
             </li>
-
           </ul>
 
           <div class="filter-select-box">
-
             <button class="filter-select" data-select>
-
               <div class="select-value" data-selecct-value>Select category</div>
-
               <div class="select-icon">
                 <ion-icon name="chevron-down"></ion-icon>
               </div>
-
             </button>
-
             <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
+              <li class="select-item"><button data-select-item>All</button></li>
+              <li class="select-item"><button data-select-item>UAV Design</button></li>
+              <li class="select-item"><button data-select-item>Embedded Systems</button></li>
+              <li class="select-item"><button data-select-item>Software</button></li>
             </ul>
-
           </div>
 
           <ul class="project-list">
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
+            <!-- TWiQ -->
+            <li class="project-item active" data-filter-item data-category="uav design">
+              <a href="https://github.com/Arundawnrider" target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                  <img src="./assets/images/project-1.jpg" alt="TWiQ VTOL UAV" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
-
+                <h3 class="project-title">TWiQ — Tandem Wing Hybrid VTOL</h3>
+                <p class="project-category">UAV Design</p>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
+            <!-- ARIESCAM -->
+            <li class="project-item active" data-filter-item data-category="embedded systems">
+              <a href="https://github.com/Arundawnrider" target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                  <img src="./assets/images/project-2.png" alt="ARIESCAM" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Orizon</h3>
-
-                <p class="project-category">Web development</p>
-
+                <h3 class="project-title">ARIESCAM — Drone Geotagging System</h3>
+                <p class="project-category">Embedded Systems</p>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
+            <!-- ARIES-Geo-Camera Android App -->
+            <li class="project-item active" data-filter-item data-category="software">
+              <a href="https://github.com/Arundawnrider" target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                  <img src="./assets/images/project-3.jpg" alt="ARIES Geo Camera App" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Fundo</h3>
-
-                <p class="project-category">Web design</p>
-
+                <h3 class="project-title">ARIES-Geo-Camera Android App</h3>
+                <p class="project-category">Software</p>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
+            <!-- TWiQ CFD -->
+            <li class="project-item active" data-filter-item data-category="uav design">
+              <a href="https://github.com/Arundawnrider" target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                  <img src="./assets/images/project-4.png" alt="CFD Simulation" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
+                <h3 class="project-title">TWiQ CFD — ANSYS Fluent SST k-ω</h3>
+                <p class="project-category">UAV Design</p>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
+            <!-- RaspController Fork -->
+            <li class="project-item active" data-filter-item data-category="software">
+              <a href="https://github.com/Arundawnrider/raspcontroller" target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+                  <img src="./assets/images/project-5.png" alt="RaspController" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
+                <h3 class="project-title">RaspController — Go/Fiber Pi Controller</h3>
+                <p class="project-category">Software</p>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
+            <!-- Digital Twin -->
+            <li class="project-item active" data-filter-item data-category="uav design">
+              <a href="https://github.com/Arundawnrider" target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
+                  <img src="./assets/images/project-6.png" alt="Digital Twin" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
+                <h3 class="project-title">Digital Twin — TWiQ Structural Analysis</h3>
+                <p class="project-category">UAV Design</p>
               </a>
             </li>
 
           </ul>
 
         </section>
-
       </article>
 
 
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
+      <!-- ─── CONTACT ─── -->
       <article class="contact" data-page="contact">
 
         <header>
@@ -976,56 +625,35 @@
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497592.4689796073!2d79.87820695!3d13.07291715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
               width="400" height="300" loading="lazy"></iframe>
           </figure>
         </section>
 
         <section class="contact-form">
-
           <h3 class="h3 form-title">Contact Form</h3>
 
           <form action="#" class="form" data-form>
-
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
             </div>
-
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
-
           </form>
-
         </section>
 
       </article>
 
     </div>
-
   </main>
 
-
-
-
-
-
-  <!--
-    - custom js link
-  -->
   <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
-
 </html>
