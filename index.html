@@ -1,659 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arun V — Aeronautical Engineer</title>
-
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arun V — Aeronautical Engineer & UAV Researcher</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-
 <body>
 
-  <main>
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <span class="loader-tag">ARIES // ARUN V</span>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <span class="loader-pct" id="loaderPct">0%</span>
+    </div>
+  </div>
 
-    <!-- ─── SIDEBAR ─── -->
-    <aside class="sidebar" data-sidebar>
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
 
-      <div class="sidebar-info">
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Arun V" width="80">
-        </figure>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a class="nav-logo" href="#hero">AV<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about" data-nav>About</a></li>
+      <li><a href="#skills" data-nav>Skills</a></li>
+      <li><a href="#experience" data-nav>Experience</a></li>
+      <li><a href="#projects" data-nav>Projects</a></li>
+      <li><a href="#contact" data-nav>Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="mailto:arundawn96058@gmail.com">Hire Me</a>
+    <button class="nav-burger" id="burger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
 
-        <div class="info-content">
-          <h1 class="name" title="Arun V">Arun V</h1>
-          <p class="title">Aeronautical Engineer &amp; UAV Researcher</p>
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#skills" class="mob-link">Skills</a></li>
+      <li><a href="#experience" class="mob-link">Experience</a></li>
+      <li><a href="#projects" class="mob-link">Projects</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-tag reveal-up">
+        <span class="dot"></span> Available for Internships &amp; Collaborations
+      </div>
+      <h1 class="hero-name reveal-up">
+        <span class="hero-first">Arun</span>
+        <span class="hero-last">V<span class="accent">.</span></span>
+      </h1>
+      <p class="hero-role reveal-up">
+        Aeronautical Engineer &mdash;
+        <span class="typewriter" id="typewriter"></span>
+      </p>
+      <p class="hero-sub reveal-up">
+        Final-year student at <strong>MIT Chennai</strong> &bull; Co-founder of <strong>ARIES</strong> &bull;
+        Building autonomous systems that fly with precision.
+      </p>
+      <div class="hero-actions reveal-up">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+      <div class="hero-stats reveal-up">
+        <div class="stat">
+          <span class="stat-num" data-target="3">0</span>+
+          <span class="stat-label">Years Research</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="6">0</span>+
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="2">0</span>+
+          <span class="stat-label">Internships</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left">
+          <div class="section-label reveal-left">01 &mdash; About</div>
+          <h2 class="section-title reveal-left">Engineering the<br /><em>Future of Flight</em></h2>
+          <div class="about-img-wrap reveal-left">
+            <img src="./assets/images/my-avatar.png" alt="Arun V" class="about-img" />
+            <div class="about-img-badge">
+              <span class="badge-num">2026</span>
+              <span class="badge-text">Graduating</span>
+            </div>
+            <div class="about-img-tag">MIT Chennai</div>
+          </div>
+        </div>
+        <div class="about-right">
+          <p class="about-text reveal-right">
+            I'm a final-year <strong>Aeronautical Engineering student</strong> at MIT, Chennai and co-founder 
+            of <strong>ARIES</strong> (Aerobot Research and Innovative Engineering Solutions). My work lives 
+            at the intersection of aerospace design, embedded systems, and autonomous flight intelligence.
+          </p>
+          <p class="about-text reveal-right">
+            My flagship project <strong>TWiQ</strong> is a tandem-wing hybrid VTOL quadrotor UAV shaped 
+            through ANSYS Fluent CFD (SST k-ω), AVL stability analysis, and SolidWorks FEA. Alongside hardware, 
+            I build the software stack: <strong>ARIESCAM</strong>, a Raspberry Pi geotagged drone camera system 
+            with Flask backend, GPS integration, and an Android companion app.
+          </p>
+          <div class="about-chips reveal-right">
+            <span class="chip">UAV Design</span>
+            <span class="chip">CFD / FEA</span>
+            <span class="chip">Embedded Systems</span>
+            <span class="chip">Avionics</span>
+            <span class="chip">Python</span>
+            <span class="chip">Raspberry Pi</span>
+            <span class="chip">SolidWorks</span>
+            <span class="chip">ANSYS Fluent</span>
+          </div>
+          <div class="about-links reveal-right">
+            <a href="https://github.com/Arundawnrider" class="about-social" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/arun-v-aeronautical/" class="about-social" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:arundawn96058@gmail.com" class="about-social">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+              Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-label">02 &mdash; Skills</div>
+        <h2 class="section-title">Technical <em>Arsenal</em></h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-card reveal-up" style="--d:0s">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>CFD &amp; Aerodynamics</h3>
+          <p>ANSYS Fluent · SST k-ω · AVL · Pressure Distribution Analysis · Boundary Layer Simulation</p>
+          <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+          <span class="skill-pct">85%</span>
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-      </div>
-
-      <div class="sidebar-info_more">
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-              <a href="mailto:arundawn96058@gmail.com" class="contact-link">arundawn96058@gmail.com</a>
-            </div>
-          </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-              <address>Chennai, Tamil Nadu, India</address>
-            </div>
-          </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="school-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Institution</p>
-              <span class="contact-link">MIT — Aeronautical Engineering '26</span>
-            </div>
-          </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="business-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Organisation</p>
-              <span class="contact-link">ARIES — Co-founder</span>
-            </div>
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-          <li class="social-item">
-            <a href="https://github.com/Arundawnrider" class="social-link" target="_blank">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/arun-v-aeronautical/" class="social-link" target="_blank">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-    </aside>
-
-
-    <!-- ─── MAIN CONTENT ─── -->
-    <div class="main-content">
-
-      <!-- NAVBAR -->
-      <nav class="navbar">
-        <ul class="navbar-list">
-          <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link>About</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-        </ul>
-      </nav>
-
-
-      <!-- ─── ABOUT ─── -->
-      <article class="about active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            I'm a final-year Aeronautical Engineering student at MIT, Chennai, and co-founder of
-            <strong>ARIES (Aerobot Research and Innovative Engineering Solutions)</strong>. My work
-            sits at the intersection of aerospace engineering, embedded systems, and autonomous flight —
-            from CFD simulations of novel UAV configurations to Raspberry Pi-powered drone payloads.
-          </p>
-          <p>
-            My flagship project, <strong>TWiQ</strong>, is a tandem-wing hybrid VTOL quadrotor UAV
-            designed for efficient cruise and vertical agility — shaped through ANSYS Fluent CFD, AVL
-            stability analysis, and SolidWorks structural modelling. Alongside engineering design, I
-            build the software that makes drones smarter: real-time geotagged camera systems,
-            Android companion apps, and full-stack flight data tools.
-          </p>
-        </section>
-
-        <!-- WHAT I'M DOING -->
-        <section class="service">
-          <h3 class="h3 service-title">What I'm Doing</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg" alt="UAV Design" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">UAV Design &amp; CFD</h4>
-                <p class="service-item-text">
-                  Full-cycle UAV design — wing geometry, boattail fuselage optimisation, SST k-ω CFD
-                  in ANSYS Fluent, and AVL longitudinal stability analysis.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Embedded Systems" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Embedded &amp; Avionics Systems</h4>
-                <p class="service-item-text">
-                  Raspberry Pi payloads, Pixhawk avionics stacks, GPS/UART integration, and
-                  real-time sensor fusion for autonomous flight.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="Software" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Drone Software &amp; Apps</h4>
-                <p class="service-item-text">
-                  Flask backends, React Native Android apps, GitHub-integrated OTA update systems,
-                  and geotagged imaging pipelines for UAV payloads.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="Research" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Aerospace Research</h4>
-                <p class="service-item-text">
-                  IEEE-format research on hybrid VTOL aerodynamics, digital twin structural analysis,
-                  and drone startup ecosystem development in South India.
-                </p>
-              </div>
-            </li>
-
-          </ul>
-        </section>
-
-        <!-- TESTIMONIALS -->
-        <section class="testimonials">
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Dr. Kaviyarasu" width="60" data-testimonials-avatar>
-                </figure>
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Dr. Kaviyarasu</h4>
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Arun consistently demonstrated deep curiosity and hands-on skill in avionics and
-                    control systems. His ability to prototype embedded systems and translate theory
-                    into real-time applications is truly commendable.
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jabez Richards" width="60" data-testimonials-avatar>
-                </figure>
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jabez Richards</h4>
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    I was impressed with Arun's project on SDR-based aircraft signal reception. His
-                    structured approach, dedication to problem-solving, and technical clarity made
-                    him stand out among his peers.
-                  </p>
-                </div>
-              </div>
-            </li>
-
-          </ul>
-        </section>
-
-        <!-- MODAL for testimonials -->
-        <div class="modal-container" data-modal-container>
-          <div class="overlay" data-overlay></div>
-          <section class="testimonials-modal">
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-            <div class="modal-content">
-              <h4 class="h4 modal-title" data-modal-title>Daniel lewis</h4>
-              <time datetime="2021-06-14">14 June, 2021</time>
-              <div data-modal-text>
-                <p>Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience and is very concerned about the needs of client.</p>
-              </div>
-            </div>
-          </section>
+        <div class="skill-card reveal-up" style="--d:0.1s">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+          </div>
+          <h3>CAD &amp; Structural</h3>
+          <p>SolidWorks · FEA · Boattail Fuselage Design · Wing Geometry · Stress Analysis</p>
+          <div class="skill-bar"><div class="skill-fill" data-w="88"></div></div>
+          <span class="skill-pct">88%</span>
         </div>
 
-        <!-- COLLABORATIONS -->
-        <section class="clients">
-          <h3 class="h3 clients-title">Collaborations &amp; Affiliations</h3>
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="https://www.annauniv.edu/" target="_blank">
-                <img src="./assets/images/ANNAUNIVERSITYLOGO.png" alt="Anna University">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="https://www.drdo.gov.in/labs-and-establishments/defence-research-and-development-laboratory-drdl" target="_blank">
-                <img src="./assets/images/AAE SEAL 2.png" alt="DRDL — DRDO">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="https://www.brahmos.com/" target="_blank">
-                <img src="./assets/images/BRAHMOS LOGO.png" alt="BrahMos Aerospace">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="https://naanmudhalvan.tn.gov.in/" target="_blank">
-                <img src="./assets/images/NAAN MUDHALVAN LOGO.png" alt="Naan Mudhalvan">
-              </a>
-            </li>
-
-          </ul>
-        </section>
-
-      </article>
-
-
-      <!-- ─── RESUME ─── -->
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <!-- EDUCATION -->
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Education</h3>
+        <div class="skill-card reveal-up" style="--d:0.2s">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
           </div>
+          <h3>Embedded Systems</h3>
+          <p>Raspberry Pi · UART GPS · picamera2 · libcamera · Pixhawk · ArduPilot · Arduino</p>
+          <div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+          <span class="skill-pct">80%</span>
+        </div>
 
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">B.E. Aeronautical Engineering — MIT, Chennai</h4>
-              <span>2022 — 2026</span>
-              <p class="timeline-text">
-                Final-year student specialising in aerodynamics, flight mechanics, avionics, and structural
-                analysis. Core project: TWiQ hybrid VTOL UAV — an IEEE-format research effort spanning
-                CFD, stability analysis, and structural simulation.
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Higher Secondary (PCM + CS) — Tamil Nadu State Board</h4>
-              <span>2020 — 2022</span>
-              <p class="timeline-text">
-                Physics, Chemistry, Mathematics with Computer Science. Strong foundation in applied
-                mathematics and programming that drives current embedded systems work.
-              </p>
-            </li>
-
-          </ol>
-        </section>
-
-        <!-- EXPERIENCE -->
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="briefcase-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Experience</h3>
+        <div class="skill-card reveal-up" style="--d:0.3s">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
+          <h3>Software Dev</h3>
+          <p>Python · Flask · REST APIs · SQLite · React Native · Kotlin · Go/Fiber · GitHub Actions</p>
+          <div class="skill-bar"><div class="skill-fill" data-w="78"></div></div>
+          <span class="skill-pct">78%</span>
+        </div>
 
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Co-founder &amp; Lead Engineer — ARIES</h4>
-              <span>2023 — Present</span>
-              <p class="timeline-text">
-                Co-founded Aerobot Research and Innovative Engineering Solutions. Leading UAV design,
-                avionics R&amp;D, drone payload development (ARIESCAM), curriculum creation for drone
-                engineering courses, and event coordination for the organisation.
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Engineering Intern — DRDL, Hyderabad (DRDO)</h4>
-              <span>2024</span>
-              <p class="timeline-text">
-                Interned at the Defence Research and Development Laboratory under DRDO. Gained hands-on
-                exposure to defence aerospace systems, propulsion test infrastructure, and high-performance
-                materials in a research-grade environment.
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Design Intern (Applied) — ARIES</h4>
-              <span>2023 — 2024</span>
-              <p class="timeline-text">
-                Led SolidWorks CAD modelling, ANSYS structural simulation, and aerodynamic trade studies
-                for the TWiQ UAV. Developed course content, SDS documentation, and technical reports.
-              </p>
-            </li>
-
-          </ol>
-        </section>
-
-        <!-- SKILLS -->
-        <section class="skill">
-          <h3 class="h3 skills-title">My Skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">ANSYS Fluent (CFD)</h5>
-                <data value="85">85%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 85%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">SolidWorks (CAD &amp; FEA)</h5>
-                <data value="88">88%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 88%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Python (Scripting &amp; Automation)</h5>
-                <data value="80">80%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Raspberry Pi &amp; Embedded Linux</h5>
-                <data value="78">78%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 78%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">AVL (Aerodynamic Vortex Lattice)</h5>
-                <data value="75">75%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 75%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Flask &amp; REST APIs</h5>
-                <data value="72">72%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 72%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Pixhawk / ArduPilot Avionics</h5>
-                <data value="70">70%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Android (React Native / Kotlin)</h5>
-                <data value="65">65%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 65%;"></div>
-              </div>
-            </li>
-
-          </ul>
-        </section>
-
-      </article>
-
-
-      <!-- ─── PORTFOLIO ─── -->
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>UAV Design</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Embedded Systems</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Software</button>
-            </li>
-          </ul>
-
-          <div class="filter-select-box">
-            <button class="filter-select" data-select>
-              <div class="select-value" data-selecct-value>Select category</div>
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-            </button>
-            <ul class="select-list">
-              <li class="select-item"><button data-select-item>All</button></li>
-              <li class="select-item"><button data-select-item>UAV Design</button></li>
-              <li class="select-item"><button data-select-item>Embedded Systems</button></li>
-              <li class="select-item"><button data-select-item>Software</button></li>
-            </ul>
+        <div class="skill-card reveal-up" style="--d:0.4s">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
           </div>
+          <h3>UAV Systems</h3>
+          <p>Hybrid VTOL Design · Thrust Calculations · Motor Selection · ESC Tuning · Mission Planning</p>
+          <div class="skill-bar"><div class="skill-fill" data-w="82"></div></div>
+          <span class="skill-pct">82%</span>
+        </div>
 
-          <ul class="project-list">
+        <div class="skill-card reveal-up" style="--d:0.5s">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </div>
+          <h3>Research &amp; Documentation</h3>
+          <p>IEEE Paper Writing · Literature Review · Digital Twin Analysis · Technical Reports · SDS Docs</p>
+          <div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
+          <span class="skill-pct">75%</span>
+        </div>
 
-            <!-- TWiQ -->
-            <li class="project-item active" data-filter-item data-category="uav design">
-              <a href="https://github.com/Arundawnrider" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-1.jpg" alt="TWiQ VTOL UAV" loading="lazy">
-                </figure>
-                <h3 class="project-title">TWiQ — Tandem Wing Hybrid VTOL</h3>
-                <p class="project-category">UAV Design</p>
-              </a>
-            </li>
+      </div>
+    </div>
+  </section>
 
-            <!-- ARIESCAM -->
-            <li class="project-item active" data-filter-item data-category="embedded systems">
-              <a href="https://github.com/Arundawnrider" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-2.png" alt="ARIESCAM" loading="lazy">
-                </figure>
-                <h3 class="project-title">ARIESCAM — Drone Geotagging System</h3>
-                <p class="project-category">Embedded Systems</p>
-              </a>
-            </li>
+  <!-- EXPERIENCE -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-label">03 &mdash; Experience</div>
+        <h2 class="section-title">Journey &amp; <em>Education</em></h2>
+      </div>
+      <div class="timeline">
 
-            <!-- ARIES-Geo-Camera Android App -->
-            <li class="project-item active" data-filter-item data-category="software">
-              <a href="https://github.com/Arundawnrider" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-3.jpg" alt="ARIES Geo Camera App" loading="lazy">
-                </figure>
-                <h3 class="project-title">ARIES-Geo-Camera Android App</h3>
-                <p class="project-category">Software</p>
-              </a>
-            </li>
-
-            <!-- TWiQ CFD -->
-            <li class="project-item active" data-filter-item data-category="uav design">
-              <a href="https://github.com/Arundawnrider" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-4.png" alt="CFD Simulation" loading="lazy">
-                </figure>
-                <h3 class="project-title">TWiQ CFD — ANSYS Fluent SST k-ω</h3>
-                <p class="project-category">UAV Design</p>
-              </a>
-            </li>
-
-            <!-- RaspController Fork -->
-            <li class="project-item active" data-filter-item data-category="software">
-              <a href="https://github.com/Arundawnrider/raspcontroller" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-5.png" alt="RaspController" loading="lazy">
-                </figure>
-                <h3 class="project-title">RaspController — Go/Fiber Pi Controller</h3>
-                <p class="project-category">Software</p>
-              </a>
-            </li>
-
-            <!-- Digital Twin -->
-            <li class="project-item active" data-filter-item data-category="uav design">
-              <a href="https://github.com/Arundawnrider" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-6.png" alt="Digital Twin" loading="lazy">
-                </figure>
-                <h3 class="project-title">Digital Twin — TWiQ Structural Analysis</h3>
-                <p class="project-category">UAV Design</p>
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-      </article>
-
-
-      <!-- ─── CONTACT ─── -->
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497592.4689796073!2d79.87820695!3d13.07291715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+        <div class="tl-item reveal-left">
+          <div class="tl-dot"></div>
+          <div class="tl-connector"></div>
+          <div class="tl-card">
+            <div class="tl-meta">
+              <span class="tl-date">2023 — Present</span>
+              <span class="tl-tag">Current</span>
             </div>
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
+            <h3>Co-founder &amp; Lead Engineer</h3>
+            <h4>ARIES — Aerobot Research &amp; Innovative Engineering Solutions</h4>
+            <p>Leading UAV design and avionics R&D. Spearheading the TWiQ VTOL project, ARIESCAM drone payload, drone engineering curriculum development, and organisational operations.</p>
+            <div class="tl-chips">
+              <span>TWiQ UAV</span><span>ARIESCAM</span><span>Curriculum Design</span><span>Team Lead</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal-right">
+          <div class="tl-dot"></div>
+          <div class="tl-connector"></div>
+          <div class="tl-card">
+            <div class="tl-meta">
+              <span class="tl-date">2024</span>
+              <span class="tl-tag">Defence</span>
+            </div>
+            <h3>Engineering Intern</h3>
+            <h4>DRDL — Defence Research &amp; Development Laboratory, Hyderabad (DRDO)</h4>
+            <p>Hands-on exposure to defence aerospace systems at India's premier missile research lab. Worked alongside engineers on propulsion, high-performance materials, and test infrastructure.</p>
+            <div class="tl-chips">
+              <span>DRDO</span><span>Aerospace Systems</span><span>Propulsion</span><span>Defence R&D</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal-left">
+          <div class="tl-dot"></div>
+          <div class="tl-connector"></div>
+          <div class="tl-card">
+            <div class="tl-meta">
+              <span class="tl-date">2022 — 2026</span>
+              <span class="tl-tag">Education</span>
+            </div>
+            <h3>B.E. Aeronautical Engineering</h3>
+            <h4>MIT — Madras Institute of Technology, Chennai</h4>
+            <p>Final-year student specialising in aerodynamics, avionics, and structural analysis. Core academic project: TWiQ hybrid VTOL UAV — an IEEE-format research study spanning CFD, stability analysis, and structural simulation.</p>
+            <div class="tl-chips">
+              <span>Aerodynamics</span><span>Avionics</span><span>FEA</span><span>IEEE Research</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- AFFILIATIONS -->
+      <div class="affiliations reveal-up">
+        <h3 class="aff-title">Collaborations &amp; Affiliations</h3>
+        <div class="aff-logos">
+          <a href="https://www.annauniv.edu/" target="_blank" class="aff-item">
+            <img src="./assets/images/ANNAUNIVERSITYLOGO.png" alt="Anna University" />
+          </a>
+          <a href="https://www.drdo.gov.in/labs-and-establishments/defence-research-and-development-laboratory-drdl" target="_blank" class="aff-item">
+            <img src="./assets/images/AAE SEAL 2.png" alt="DRDL DRDO" />
+          </a>
+          <a href="https://www.brahmos.com/" target="_blank" class="aff-item">
+            <img src="./assets/images/BRAHMOS LOGO.png" alt="BrahMos Aerospace" />
+          </a>
+          <a href="https://naanmudhalvan.tn.gov.in/" target="_blank" class="aff-item">
+            <img src="./assets/images/NAAN MUDHALVAN LOGO.png" alt="Naan Mudhalvan" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-label">04 &mdash; Projects</div>
+        <h2 class="section-title">Built &amp; <em>Researched</em></h2>
+      </div>
+
+      <div class="proj-filters reveal-up">
+        <button class="pf-btn active" data-filter="all">All</button>
+        <button class="pf-btn" data-filter="uav">UAV Design</button>
+        <button class="pf-btn" data-filter="embedded">Embedded</button>
+        <button class="pf-btn" data-filter="software">Software</button>
+      </div>
+
+      <div class="proj-grid">
+
+        <div class="proj-card featured" data-cat="uav" data-reveal>
+          <div class="proj-label">Featured</div>
+          <div class="proj-img-wrap">
+            <img src="./assets/images/project-1.jpg" alt="TWiQ VTOL UAV" loading="lazy" />
+            <div class="proj-overlay">
+              <a href="https://github.com/Arundawnrider" target="_blank" class="proj-view">View →</a>
+            </div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-cats"><span>UAV Design</span><span>CFD</span><span>Research</span></div>
+            <h3>TWiQ — Tandem Wing Hybrid VTOL</h3>
+            <p>Full-cycle design of a tandem-wing hybrid VTOL quadrotor. ANSYS Fluent SST k-ω CFD, AVL longitudinal stability, SolidWorks FEA, Pixhawk avionics stack, and IEEE paper.</p>
+          </div>
+        </div>
+
+        <div class="proj-card" data-cat="embedded" data-reveal>
+          <div class="proj-img-wrap">
+            <img src="./assets/images/project-2.png" alt="ARIESCAM" loading="lazy" />
+            <div class="proj-overlay">
+              <a href="https://github.com/Arundawnrider" target="_blank" class="proj-view">View →</a>
+            </div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-cats"><span>Embedded</span><span>Raspberry Pi</span></div>
+            <h3>ARIESCAM — Drone Geotagging System</h3>
+            <p>Pi Zero 2W payload with Arducam IMX708, NEO-7M GPS, Flask backend, geotagged photo capture, session management, ZIP download, and SQLite tracking.</p>
+          </div>
+        </div>
+
+        <div class="proj-card" data-cat="software" data-reveal>
+          <div class="proj-img-wrap">
+            <img src="./assets/images/project-3.jpg" alt="ARIES Geo Camera App" loading="lazy" />
+            <div class="proj-overlay">
+              <a href="https://github.com/Arundawnrider" target="_blank" class="proj-view">View →</a>
+            </div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-cats"><span>Android</span><span>React Native</span></div>
+            <h3>ARIES-Geo-Camera Android App</h3>
+            <p>Android companion app for ARIESCAM with in-app OTA update system via GitHub Releases API, live camera feed, and session controls.</p>
+          </div>
+        </div>
+
+        <div class="proj-card" data-cat="uav" data-reveal>
+          <div class="proj-img-wrap">
+            <img src="./assets/images/project-4.png" alt="TWiQ CFD" loading="lazy" />
+            <div class="proj-overlay">
+              <a href="https://github.com/Arundawnrider" target="_blank" class="proj-view">View →</a>
+            </div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-cats"><span>CFD</span><span>ANSYS</span></div>
+            <h3>TWiQ CFD — Boattail Fuselage Optimisation</h3>
+            <p>ANSYS Fluent SST k-ω simulation for drag reduction and pressure distribution on TWiQ's boattail fuselage. Validated against AVL stability predictions.</p>
+          </div>
+        </div>
+
+        <div class="proj-card" data-cat="software" data-reveal>
+          <div class="proj-img-wrap">
+            <img src="./assets/images/project-5.png" alt="RaspController" loading="lazy" />
+            <div class="proj-overlay">
+              <a href="https://github.com/Arundawnrider" target="_blank" class="proj-view">View →</a>
+            </div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-cats"><span>Go / Fiber</span><span>REST API</span></div>
+            <h3>RaspController — Go/Fiber Pi Backend</h3>
+            <p>Forked and extended an open-source Go/Fiber Raspberry Pi controller with custom geo_camera endpoints, enabling real-time drone payload control via REST.</p>
+          </div>
+        </div>
+
+        <div class="proj-card" data-cat="uav" data-reveal>
+          <div class="proj-img-wrap">
+            <img src="./assets/images/project-6.png" alt="Digital Twin" loading="lazy" />
+            <div class="proj-overlay">
+              <a href="https://github.com/Arundawnrider" target="_blank" class="proj-view">View →</a>
+            </div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-cats"><span>Digital Twin</span><span>SolidWorks</span></div>
+            <h3>Digital Twin — TWiQ Structural Analysis</h3>
+            <p>Digital twin framework for TWiQ airframe using SolidWorks FEA. Literature-backed methodology connecting real sensor data to virtual structural health models.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-label">05 &mdash; Contact</div>
+        <h2 class="section-title">Let's <em>Connect</em></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-left reveal-left">
+          <p>Have a project, internship, or collaboration in mind? I'm always open to discussing aerospace, embedded systems, and UAV work.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:arundawn96058@gmail.com">arundawn96058@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Chennai, Tamil Nadu, India</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              <a href="https://github.com/Arundawnrider" target="_blank">github.com/Arundawnrider</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right reveal-right">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" placeholder="What's this about?" required />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="Tell me about your project or opportunity..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
               <span>Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             </button>
           </form>
-        </section>
-
-      </article>
-
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">AV<span>.</span></span>
+        <span class="footer-copy">© 2026 Arun V &mdash; Aeronautical Engineer &amp; UAV Researcher</span>
+        <div class="footer-socials">
+          <a href="https://github.com/Arundawnrider" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/arun-v-aeronautical/" target="_blank">LinkedIn</a>
+          <a href="mailto:arundawn96058@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="./assets/js/script.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
 </html>
