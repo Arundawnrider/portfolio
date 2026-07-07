@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Aircraft dynamic response step plot open and closed loop">
+  <defs>
+    <linearGradient id="bgResp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef4ff"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgResp)"/>
+  <g stroke="#cbd5e1" stroke-width="1">
+    <line x1="90" y1="70" x2="90" y2="360"/>
+    <line x1="90" y1="360" x2="740" y2="360"/>
+    <line x1="90" y1="130" x2="740" y2="130" stroke-dasharray="4 6"/>
+    <line x1="90" y1="200" x2="740" y2="200" stroke-dasharray="4 6"/>
+    <line x1="90" y1="290" x2="740" y2="290" stroke-dasharray="4 6"/>
+  </g>
+  <line x1="90" y1="200" x2="740" y2="200" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="2 4"/>
+  <path d="M90 340 L 150 340 C 210 340, 220 90, 300 120 C 360 142, 350 262, 420 240 C 470 224, 470 176, 520 190 C 560 201, 560 210, 610 202 C 660 197, 690 200, 740 200"
+        fill="none" stroke="#1d4ed8" stroke-width="3.5"/>
+  <path d="M90 340 L 150 340 C 210 340, 235 150, 300 150 C 360 150, 420 250, 480 150 C 540 55, 600 250, 660 150 C 700 90, 720 210, 740 150"
+        fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="7 5" opacity="0.85"/>
+  <g font-family="'JetBrains Mono',monospace" font-size="17">
+    <rect x="470" y="86" width="16" height="16" rx="3" fill="#1d4ed8"/>
+    <text x="494" y="99" fill="#1e3a8a">Closed loop</text>
+    <rect x="470" y="112" width="16" height="16" rx="3" fill="#f59e0b"/>
+    <text x="494" y="125" fill="#92400e">Open loop</text>
+  </g>
+  <text x="415" y="405" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="22" fill="#1e3a8a">MATLAB STABILITY RESPONSE</text>
+</svg>

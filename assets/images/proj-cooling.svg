@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Laptop cooling pad with multi-fan array">
+  <defs>
+    <linearGradient id="bgCool" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef4ff"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgCool)"/>
+  <polygon points="230,150 570,150 620,250 180,250" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+  <g fill="none" stroke="#1d4ed8" stroke-width="3">
+    <g transform="translate(255,175)">
+      <circle cx="0" cy="0" r="34" fill="#ffffff"/>
+      <path d="M0 0 C -6 -26, 18 -22, 0 0 C 26 -6, 22 18, 0 0 C 6 26, -18 22, 0 0 C -26 6, -22 -18, 0 0 Z" fill="#93c5fd" stroke="#1d4ed8" stroke-width="2"/>
+      <circle cx="0" cy="0" r="5" fill="#1d4ed8"/>
+    </g>
+    <g transform="translate(400,175)">
+      <circle cx="0" cy="0" r="34" fill="#ffffff"/>
+      <path d="M0 0 C -6 -26, 18 -22, 0 0 C 26 -6, 22 18, 0 0 C 6 26, -18 22, 0 0 C -26 6, -22 -18, 0 0 Z" fill="#93c5fd" stroke="#1d4ed8" stroke-width="2"/>
+      <circle cx="0" cy="0" r="5" fill="#1d4ed8"/>
+    </g>
+    <g transform="translate(545,175)">
+      <circle cx="0" cy="0" r="34" fill="#ffffff"/>
+      <path d="M0 0 C -6 -26, 18 -22, 0 0 C 26 -6, 22 18, 0 0 C 6 26, -18 22, 0 0 C -26 6, -22 -18, 0 0 Z" fill="#93c5fd" stroke="#1d4ed8" stroke-width="2"/>
+      <circle cx="0" cy="0" r="5" fill="#1d4ed8"/>
+    </g>
+  </g>
+  <polygon points="180,250 620,250 660,300 140,300" fill="#93c5fd" stroke="#1d4ed8" stroke-width="3"/>
+  <rect x="150" y="105" width="470" height="14" rx="7" fill="#1d4ed8" opacity="0.15"/>
+  <g stroke="#f59e0b" stroke-width="3" stroke-linecap="round" opacity="0.85">
+    <path d="M300 130 q 10 -18 0 -36 q -10 -18 0 -36"/>
+    <path d="M400 130 q 10 -18 0 -36 q -10 -18 0 -36"/>
+    <path d="M500 130 q 10 -18 0 -36 q -10 -18 0 -36"/>
+  </g>
+  <text x="400" y="405" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="22" fill="#1e3a8a">MULTI-FAN COOLING PAD</text>
+</svg>
