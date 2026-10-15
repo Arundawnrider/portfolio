@@ -1,3 +1,10 @@
+// ─── ACCESSIBILITY / PREFERENCES ───
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const supportsRevealObserver = 'IntersectionObserver' in window;
+if (supportsRevealObserver && !prefersReducedMotion) {
+  document.body.classList.add('js-enabled');
+}
+
 // ─── THEME TOGGLE ───
 const themeToggle = document.getElementById('themeToggle');
 if (themeToggle) {
@@ -5,147 +12,204 @@ if (themeToggle) {
     const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
     const next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
+    themeToggle.setAttribute('aria-label', `Switch to ${next === 'dark' ? 'dark' : 'light'} mode`);
     try { localStorage.setItem('theme', next); } catch (e) {}
   });
 }
 
 // ─── NAV SCROLL ───
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
+function handleScroll() {
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 40);
   updateActiveNav();
-});
+}
+window.addEventListener('scroll', handleScroll, { passive: true });
+handleScroll();
 
-// ─── BURGER MENU ───
-const burger     = document.getElementById('burger');
+// ─── MOBILE DISCLOSURE NAVIGATION ───
+const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobileMenu');
-burger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-  const spans = burger.querySelectorAll('span');
-  if (mobileMenu.classList.contains('open')) {
-    spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
-    spans[1].style.transform = 'rotate(-45deg) translate(5px,-5px)';
-  } else {
-    spans[0].style.transform = '';
-    spans[1].style.transform = '';
-  }
-});
-document.querySelectorAll('.mob-link').forEach(l => {
-  l.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    burger.querySelectorAll('span').forEach(s => s.style.transform = '');
+
+function setMobileMenuOpen(isOpen) {
+  if (!burger || !mobileMenu) return;
+  mobileMenu.classList.toggle('open', isOpen);
+  burger.setAttribute('aria-expanded', String(isOpen));
+  burger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+  burger.querySelectorAll('span').forEach((span, index) => {
+    span.style.transform = isOpen
+      ? (index === 0 ? 'rotate(45deg) translate(5px,5px)' : 'rotate(-45deg) translate(5px,-5px)')
+      : '';
   });
-});
+}
+
+if (burger && mobileMenu) {
+  burger.addEventListener('click', () => {
+    setMobileMenuOpen(!mobileMenu.classList.contains('open'));
+  });
+
+  document.querySelectorAll('.mob-link').forEach(link => {
+    link.addEventListener('click', () => setMobileMenuOpen(false));
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && mobileMenu.classList.contains('open')) {
+      setMobileMenuOpen(false);
+      burger.focus();
+    }
+  });
+}
 
 // ─── ACTIVE NAV ───
 function updateActiveNav() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks  = document.querySelectorAll('[data-nav]');
-  sections.forEach(sec => {
-    const top    = sec.offsetTop - 100;
-    const bottom = top + sec.offsetHeight;
-    if (window.scrollY >= top && window.scrollY < bottom) {
-      navLinks.forEach(l => l.classList.remove('active'));
-      const link = document.querySelector(`[data-nav][href="#${sec.id}"]`);
-      if (link) link.classList.add('active');
-    }
+  const navLinks = document.querySelectorAll('[data-nav]');
+  let activeId = '';
+  sections.forEach(section => {
+    const top = section.offsetTop - 120;
+    const bottom = top + section.offsetHeight;
+    if (window.scrollY >= top && window.scrollY < bottom) activeId = section.id;
+  });
+  navLinks.forEach(link => {
+    const isActive = link.getAttribute('href') === `#${activeId}`;
+    link.classList.toggle('active', isActive);
+    if (isActive) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
   });
 }
 
 // ─── TYPEWRITER ───
-const words  = ['Design Engineer', 'Avionics Enthusiast', 'Embedded Systems', 'UAV Systems Engineer', 'CAD Designer'];
-let wi = 0, ci = 0, deleting = false;
+const words = ['Design Engineer', 'Avionics Enthusiast', 'Embedded Systems', 'UAV Systems Engineer', 'CAD Designer'];
 const tw = document.getElementById('typewriter');
-function type() {
-  if (!tw) return;
-  const word = words[wi];
-  tw.textContent = deleting ? word.slice(0, ci--) : word.slice(0, ci++);
-  if (!deleting && ci > word.length)      { deleting = true; setTimeout(type, 1400); return; }
-  if (deleting && ci < 0)                  { deleting = false; wi = (wi + 1) % words.length; ci = 0; }
-  setTimeout(type, deleting ? 50 : 90);
+if (tw && prefersReducedMotion) {
+  tw.textContent = 'UAV Systems Engineer';
+} else if (tw) {
+  let wi = 0;
+  let ci = 0;
+  let deleting = false;
+  function type() {
+    const word = words[wi];
+    tw.textContent = deleting ? word.slice(0, ci--) : word.slice(0, ci++);
+    if (!deleting && ci > word.length) {
+      deleting = true;
+      window.setTimeout(type, 1400);
+      return;
+    }
+    if (deleting && ci < 0) {
+      deleting = false;
+      wi = (wi + 1) % words.length;
+      ci = 0;
+    }
+    window.setTimeout(type, deleting ? 50 : 90);
+  }
+  window.setTimeout(type, 800);
 }
-setTimeout(type, 800);
 
-// ─── SCROLL REVEAL ───
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      const fill = entry.target.querySelector('.skill-fill');
-      if (fill) fill.style.width = fill.dataset.w + '%';
-      entry.target.querySelectorAll('.stat-num[data-target]').forEach(animateCounter);
-    }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, [data-reveal]').forEach(el => observer.observe(el));
-
-// Skill cards individually for bars
-const skillObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const fill = e.target.querySelector('.skill-fill');
-      if (fill) setTimeout(() => fill.style.width = fill.dataset.w + '%', 200);
-    }
-  });
-}, { threshold: 0.3 });
-document.querySelectorAll('.skill-card').forEach(c => skillObserver.observe(c));
-
-// ─── COUNTER ───
-function animateCounter(el) {
-  if (el.dataset.done) return;
-  el.dataset.done = '1';
-  const target = +el.dataset.target;
-  let current  = 0;
-  const step   = target / 40;
-  const iv = setInterval(() => {
+// ─── COUNTERS ───
+function animateCounter(element) {
+  if (element.dataset.done) return;
+  element.dataset.done = '1';
+  const target = Number(element.dataset.target);
+  if (!Number.isFinite(target)) return;
+  if (prefersReducedMotion) {
+    element.textContent = String(target);
+    return;
+  }
+  let current = 0;
+  const step = Math.max(target / 40, 1);
+  const interval = window.setInterval(() => {
     current = Math.min(current + step, target);
-    el.textContent = Math.round(current);
-    if (current >= target) clearInterval(iv);
+    element.textContent = String(Math.round(current));
+    if (current >= target) window.clearInterval(interval);
   }, 40);
 }
 
-// Stat counters on hero visibility
-const heroObserver = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting) {
-    document.querySelectorAll('.stat-num[data-target]').forEach(animateCounter);
-    heroObserver.disconnect();
-  }
-}, { threshold: 0.4 });
-const heroEl = document.getElementById('hero');
-if (heroEl) heroObserver.observe(heroEl);
+// ─── SCROLL REVEAL + SKILL BARS ───
+const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, [data-reveal]');
+if (supportsRevealObserver && !prefersReducedMotion) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      const fill = entry.target.querySelector('.skill-fill');
+      if (fill) fill.style.width = `${fill.dataset.w}%`;
+      entry.target.querySelectorAll('.stat-num[data-target]').forEach(animateCounter);
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12 });
+  revealElements.forEach(element => observer.observe(element));
 
-// ─── PROJECT FILTER (optional, present only if buttons exist) ───
-document.querySelectorAll('.pf-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
+  const skillObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const fill = entry.target.querySelector('.skill-fill');
+      if (fill) window.setTimeout(() => { fill.style.width = `${fill.dataset.w}%`; }, 200);
+      skillObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.skill-card').forEach(card => skillObserver.observe(card));
+} else {
+  revealElements.forEach(element => element.classList.add('visible'));
+  document.querySelectorAll('.skill-fill').forEach(fill => { fill.style.width = `${fill.dataset.w}%`; });
+}
+
+// Ensure hero counters still initialise even if the observer is unavailable.
+const heroEl = document.getElementById('hero');
+if (heroEl && (!supportsRevealObserver || prefersReducedMotion)) {
+  heroEl.querySelectorAll('.stat-num[data-target]').forEach(animateCounter);
+} else if (heroEl && supportsRevealObserver) {
+  const heroObserver = new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting) return;
+    heroEl.querySelectorAll('.stat-num[data-target]').forEach(animateCounter);
+    heroObserver.disconnect();
+  }, { threshold: 0.4 });
+  heroObserver.observe(heroEl);
+}
+
+// ─── PROJECT FILTER (only activates if filter controls are added) ───
+document.querySelectorAll('.pf-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.pf-btn').forEach(item => item.classList.toggle('active', item === button));
+    const filter = button.dataset.filter || 'all';
     document.querySelectorAll('.proj-card').forEach(card => {
-      const match = filter === 'all' || card.dataset.cat === filter;
-      card.classList.toggle('hidden', !match);
+      const category = card.dataset.cat;
+      card.classList.toggle('hidden', filter !== 'all' && category !== filter);
     });
   });
 });
 
 // ─── CONTACT FORM ───
+// There is no backend configured. Open a pre-filled email draft instead of falsely claiming delivery.
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"] span');
-    btn.textContent = 'Message Sent!';
-    form.reset();
-    setTimeout(() => btn.textContent = 'Send Message', 3000);
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const formData = new FormData(form);
+    const name = String(formData.get('name') || '').trim();
+    const email = String(formData.get('email') || '').trim();
+    const subject = String(formData.get('subject') || '').trim();
+    const message = String(formData.get('message') || '').trim();
+    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+    const mailto = `mailto:arundawn96058@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const status = document.getElementById('formStatus');
+    if (status) status.textContent = 'Opening your email app with a draft. Please review it and press Send in your email app.';
+    window.location.href = mailto;
   });
 }
 
-// ─── SMOOTH SCROLL FOR NAV LINKS ───
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
+// ─── IN-PAGE LINKS ───
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', event => {
+    const href = link.getAttribute('href');
+    if (!href || href === '#') return;
+    const target = document.querySelector(href);
+    if (!target) return;
+    event.preventDefault();
+    if (mobileMenu && mobileMenu.classList.contains('open') && link.classList.contains('mob-link')) {
+      setMobileMenuOpen(false);
     }
+    target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
   });
 });
