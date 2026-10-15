@@ -282,7 +282,7 @@ img { max-width: 100%; display: block; }
 .mobile-menu {
   position: fixed;
   inset: 0;
-  background: rgba(255,255,255,0.98);
+  background: var(--bg);
   backdrop-filter: blur(10px);
   z-index: 99;
   display: flex;
@@ -293,6 +293,7 @@ img { max-width: 100%; display: block; }
   transition: var(--transition);
 }
 .mobile-menu.open { opacity: 1; visibility: visible; }
+.mobile-menu { background: var(--bg); }
 .mobile-menu ul { list-style: none; text-align: center; }
 .mobile-menu li { margin: 22px 0; }
 .mobile-menu a {
@@ -840,7 +841,8 @@ img { max-width: 100%; display: block; }
   opacity: 0;
   transition: var(--transition);
 }
-.proj-card:hover .proj-overlay { opacity: 1; }
+.proj-card:hover .proj-overlay,
+.proj-card:focus-within .proj-overlay { opacity: 1; }
 .proj-view {
   background: #fff;
   color: var(--text);
@@ -983,8 +985,28 @@ img { max-width: 100%; display: block; }
 }
 .footer-socials a:hover { color: #fff; }
 
+/* ─── ACCESSIBILITY ─── */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.form-note {
+  color: var(--text2);
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+.form-status {
+  color: var(--text2);
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+
 /* ─── SCROLL REVEAL ─── */
-.reveal-up, .reveal-left, .reveal-right, [data-reveal] {
+body.js-enabled .reveal-up, body.js-enabled .reveal-left, body.js-enabled .reveal-right, body.js-enabled [data-reveal] {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.4,0,0.2,1);
@@ -999,6 +1021,35 @@ img { max-width: 100%; display: block; }
   transform: translate(0, 0);
 }
 [data-reveal] { transition-delay: 0.05s; }
+/* Keep all content readable if JavaScript is disabled. */
+body:not(.js-enabled) .reveal-up,
+body:not(.js-enabled) .reveal-left,
+body:not(.js-enabled) .reveal-right,
+body:not(.js-enabled) [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (hover: none) {
+  .proj-overlay { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+  body.js-enabled .reveal-up,
+  body.js-enabled .reveal-left,
+  body.js-enabled .reveal-right,
+  body.js-enabled [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 960px) {
